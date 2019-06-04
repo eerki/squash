@@ -17,14 +17,14 @@
       <a-plane static-body position="2 0.75 -4" rotation="0 -90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       
       <!--vr hands (only visible when turned on)-->
-      <a-entity vive-controls="hand: left"></a-entity>
-      <a-entity vive-controls="hand: right"></a-entity>
+      <a-entity id="leftHand" hand-controls="left"></a-entity>
+      <a-entity id="rightHand" hand-controls="right"></a-entity>
 
       <!--Our items that we made in blender-->
       <a-asset-item id="10540_Tennis_racket_V2_L3-obj" src="TennisRacket/10540_Tennis_racket_V2_L3.obj"></a-asset-item>
       <a-asset-item id="10540_Tennis_racket_V2_L3-mtl" src="TennisRacket/10540_Tennis_racket_V2_L3.mtl"></a-asset-item>
 
-      <a-obj-model src="#10540_Tennis_racket_V2_L3-obj" mtl="#10540_Tennis_racket_V2_L3-mtl"></a-obj-model>
+      <a-obj-model position="0 2 -4" src="#10540_Tennis_racket_V2_L3-obj" mtl="#10540_Tennis_racket_V2_L3-mtl"></a-obj-model>
 
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
