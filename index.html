@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta name="description" content="dynamic body issue">
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="brown"></a-plane>
-      <a-plane position="0 1.5 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-plane position="0 0.75 -6" rotation="0 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
-      <a-plane position="0 0.75 -2" rotation="-180 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
-      <a-plane position="-2 0.75 -4" rotation="0 90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
-      <a-plane position="2 0.75 -4" rotation="0 -90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+
+      <!--example room made-->
+      <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="brown"></a-plane>
+      <a-plane static-body position="0 1.5 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-plane static-body position="0 0.75 -6" rotation="0 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
+      <a-plane static-body position="0 0.75 -2" rotation="-180 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
+      <a-plane static-body position="-2 0.75 -4" rotation="0 90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
+      <a-plane static-body position="2 0.75 -4" rotation="0 -90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
+      
+      <!--vr hands (only visible when turned on)-->
+      <a-entity vive-controls="hand: left"></a-entity>
+      <a-entity vive-controls="hand: right"></a-entity>
+
+      <!--Our items that we made in blender-->
       <a-asset-item id="10540_Tennis_racket_V2_L3-obj" src="TennisRacket/10540_Tennis_racket_V2_L3.obj"></a-asset-item>
       <a-asset-item id="10540_Tennis_racket_V2_L3-mtl" src="TennisRacket/10540_Tennis_racket_V2_L3.mtl"></a-asset-item>
 
       <a-obj-model src="#10540_Tennis_racket_V2_L3-obj" mtl="#10540_Tennis_racket_V2_L3-mtl"></a-obj-model>
 
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
