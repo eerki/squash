@@ -5,29 +5,25 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="js/vendor/aframe-physics-system.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
-    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
-</head>
-
+    <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
+  </head>
   <body>
     <a-scene physics="debug: true" stats iterations: 20;>
-        <a-entity id="cameraRig">
-            <!-- camera -->
-            <a-entity id="head" camera wasd-controls look-controls></a-entity>
-
+<a-camera position="0 1 -2.25"></a-camera>
       <!--example room made-->
       <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="brown"></a-plane>
-      <a-plane static-body position="0 1.5 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-plane static-body position="0 1.5 -4" rotation="90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-plane static-body position="0 0.75 -6" rotation="0 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       <a-plane static-body position="0 0.75 -2" rotation="-180 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       <a-plane static-body position="-2 0.75 -4" rotation="0 90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       <a-plane static-body position="2 0.75 -4" rotation="0 -90 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       
-      <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0 -1"></a-box>
+      <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0.75 -3"></a-box>
 
-      <a-sphere static-body="shape: Sphere; mass: 1" position="0 1 -4" radius="0.25"></a-sphere>
+      <a-sphere position="0 1 -4" radius="0.25"></a-sphere>
       <!--vr hands (only visible when turned on)-->
-      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left" ui teleport-controls></a-entity>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
 
       <!--Our items that we made in blender-->
       <!--squash Racket-->
