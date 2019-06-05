@@ -9,7 +9,14 @@
   </head>
   <body>
     <a-scene physics="debug: true" stats iterations: 20;>
-<a-camera position="0 1 -2.25"></a-camera>
+
+      <!-- Player -->
+      <a-entity id="rig" movement-controls kinematic-body rotation="0 0 0">
+          <a-entity id="camera"
+                    camera
+                    position="0 1 -2.25"
+                    look-controls="pointerLockEnabled: true"></a-entity>
+        </a-entity>
       <!--example room made-->
       <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="brown"></a-plane>
       <a-plane static-body position="0 1.5 -4" rotation="90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
