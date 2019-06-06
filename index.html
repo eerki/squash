@@ -7,10 +7,10 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
     <script>
-    AFRAME.registerComponent('custom-controls', {
+    AFRAME.registerComponent('racket-hand', {
       schema: {
         hand: {default: ''},
-        model: {default: 'customControllerModel.gltf'}
+        model: {default: 'reget.gltf'}
       },
     
       update: function () {
@@ -36,18 +36,18 @@
 
   </head>
   <body>
-    <a-scene physics="debug: true" stats iterations: 20;>
+    <a-scene physics="debug: true" stats physics='gravity: -9.8' antialias='true'>
 
       <!-- Player -->
-      <a-entity id="rig" movement-controls kinematic-body rotation="0 0 0"  position="0 1 -2.25">
+      <a-entity id="rig" movement-controls kinematic-body rotation="0 0 0"  position="0 1 -3">
           <a-entity id="camera"
                     camera
                     look-controls="pointerLockEnabled: true"></a-entity>
         </a-entity>
  
       <!--vr hands (only visible when turned on)-->
-      <a-entity sphere-collider="objects: a-box"  id="teleHand" super-hands hand-controls="left" teleport-controls></a-entity>
-      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
+      <a-entity id="teleHand" hand-controls="left" teleport-controls></a-entity>
+      <a-entity hand-controls="right" racket-hand></a-entity>
 
       <!--example room made-->
       <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="brown"></a-plane>
@@ -76,7 +76,7 @@
       <a-asset-item id="squashoigepall-obj" src="squashoigepall.obj"></a-asset-item>
       <a-asset-item id="squashoigepall-mtl" src="squashoigepall.mtl"></a-asset-item>
       
-      <a-obj-model static-body="shape: Sphere; mass: 1" position="0 0 -8" src="#squashoigepall-obj" mtl="#squashoigepall-mtl"></a-obj-model>
+      <a-obj-model static-body="shape: Sphere;" position="0 0 -8" src="#squashoigepall-obj" mtl="#squashoigepall-mtl"></a-obj-model>
       
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
