@@ -62,7 +62,7 @@
         <a-camera>
         </a-camera>
     <a-entity hand-controls="left" mixin="controller"></a-entity>
-    <a-entity hand-controls="right" mixin="controller" racket-hand></a-entity>
+    <a-entity hand-controls="right" mixin="controller"></a-entity>
       </a-entity>
 
       <!--example room made-->
@@ -78,7 +78,7 @@
       <a-asset-item id="10540_Tennis_racket_V2_L3-obj" src="TennisRacket/10540_Tennis_racket_V2_L3.obj"></a-asset-item>
       <a-asset-item id="10540_Tennis_racket_V2_L3-mtl" src="TennisRacket/10540_Tennis_racket_V2_L3.mtl"></a-asset-item>
       
-      <a-obj-model position="0 -0.5 -8" src="#10540_Tennis_racket_V2_L3-obj" mtl="#10540_Tennis_racket_V2_L3-mtl"></a-obj-model>
+      <a-obj-model hoverable grabbable stretchable draggable droppable dynamic-body="shape: box;" position="0 -0.5 -8" src="#10540_Tennis_racket_V2_L3-obj" mtl="#10540_Tennis_racket_V2_L3-mtl"></a-obj-model>
 
       <!--Timer not working
       <a-asset-item id="timer-obj" src="timer/timer.obj"></a-asset-item>
