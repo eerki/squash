@@ -37,7 +37,7 @@
 
   </head>
   <body>
-    <a-scene physics='gravity: 0'>
+    <a-scene physics='gravity: -4.2'>
 
       <a-assets>
         <a-mixin id="controller"
@@ -55,9 +55,15 @@
         </a-mixin>
       </a-assets>
 
+      
+
       <!--vr hands (only visible when turned on)-->
+      <a-entity id=player position="0 0 -3">
+        <a-camera>
+        </a-camera>
     <a-entity hand-controls="left" mixin="controller"></a-entity>
     <a-entity hand-controls="right" mixin="controller"></a-entity>
+      </a-entity>
 
       <!--example room made-->
       <a-cylinder  static-body collision-filter="collidesWith: red, blue" radius="30" height="0.1" position="0 0 -4" color="brown"></a-cylinder>
