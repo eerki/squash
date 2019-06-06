@@ -33,15 +33,20 @@
       }
     });
     </script>
+   <script>require('aframe-teleport-controls');</script>
 
   </head>
   <body>
     <a-scene physics="debug: true" stats physics='gravity: -9.8' antialias='true'>
 
-      <!--vr hands (only visible when turned on)-->
-      <a-entity id="teleHand" hand-controls="left" teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground"></a-entity>
-      <a-entity hand-controls="right" racket-hand></a-entity>
+      <a-entity id="cameraRig">
+        <!-- camera -->
+        <a-entity id="head" camera wasd-controls look-controls></a-entity>
 
+      <!--vr hands (only visible when turned on)-->
+      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity hand-controls="right" racket-hand></a-entity>
+   </a-entity>
       <!--example room made-->
       <a-cylinder static-body id="ground" radius="30" height="0.1" position="0 0 -3"></a-cylinder>
       <a-plane static-body position="0 1.5 -4" rotation="90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
