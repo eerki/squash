@@ -51,8 +51,9 @@
                                      collidesWith: red, blue;
                                      collisionForces: false">
         </a-mixin>
-        <a-mixin id="cube" dynamic-body grabbable
-            geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5">
+        <a-mixin id="sphere" dynamic-body grabbable
+            geometry="primitive: sphere;
+             scale: 0.1 0.1 0.1;">
         </a-mixin>
       </a-assets>
 
@@ -86,7 +87,7 @@
       <a-asset-item id="squashoigepall-obj" src="squashoigepall.obj"></a-asset-item>
       <a-asset-item id="squashoigepall-mtl" src="squashoigepall.mtl"></a-asset-item>
       
-      <a-obj-model dynamic-body="shape: auto;" position="0 0 -5" scale="0.1 0.1 0.1" src="#squashoigepall-obj" mtl="#squashoigepall-mtl"></a-obj-model>
+      <a-obj-model mixin="sphere" material="color: red" sleepy collision-filter="group: red; collidesWith: default, hands, blue" position="0 0 -5" src="#squashoigepall-obj" mtl="#squashoigepall-mtl"></a-obj-model>
       
       <a-sky color="#ECECEC"></a-sky> 
     </a-scene>
