@@ -7,11 +7,11 @@
     <script src="https://unpkg.com/super-hands@2.0.2/dist/super-hands.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
-
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
     <a-scene physics='gravity: -4.2'>
-
+      <a-entity environment></a-entity>
       <a-assets>
         <a-mixin id="controller"
                  physics-collider
