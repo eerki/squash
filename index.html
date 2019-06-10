@@ -51,13 +51,18 @@
           vive-controls="hand: left"
           oculus-touch-controls="hand: left"
           microsoft-motion-controls="hand: left"
-          daydream-controls="left" gearvr-controls="left" mixin="controller">
+          daydream-controls="left" 
+          gearvr-controls="left" 
+          hand-controls="left" 
+          mixin="controller">
         </a-entity>
+
     <a-entity hand-controls="right" mixin="controller"></a-entity>
       </a-entity>
+
     </a-entity>
       <!--example room made-->
-      <a-cylinder  static-body collision-filter="collidesWith: red, blue" radius="30" height="0.1" position="0 0 -4" color="brown"></a-cylinder>
+      <a-cylinder static-body collision-filter="collidesWith: red, blue" radius="30" height="0.1" position="0 0 -4" color="brown"></a-cylinder>
       <a-plane static-body collision-filter="collidesWith: red, blue" position="0 1.5 -4" rotation="90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-plane static-body collision-filter="collidesWith: red, blue" position="0 0.75 -6" rotation="0 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       <a-plane static-body collision-filter="collidesWith: red, blue" position="0 0.75 -2" rotation="-180 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
