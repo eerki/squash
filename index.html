@@ -46,6 +46,7 @@
 -->
 
       <!--vr hands (only visible when turned on)-->
+      <a-entity id="cameraRig">
       <a-entity id=player position="0 -0.75 -2.5">
         <a-camera>
         </a-camera>
@@ -53,10 +54,11 @@
           vive-controls="hand: left"
           oculus-touch-controls="hand: left"
           microsoft-motion-controls="hand: left"
-          daydream-controls="left" gearvr-controls="left">
+          daydream-controls="left" gearvr-controls="left" mixin="controller">
         </a-entity>
     <a-entity hand-controls="right" mixin="controller"></a-entity>
       </a-entity>
+    </a-entity>
 
       <!--example room made-->
       <a-cylinder  static-body collision-filter="collidesWith: red, blue" radius="30" height="0.1" position="0 0 -4" color="brown"></a-cylinder>
