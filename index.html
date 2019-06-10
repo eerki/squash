@@ -11,24 +11,6 @@
   <body>
     <a-scene physics='gravity: -4.2'>
 
-      <a-assets>
-        <a-mixin id="controller"
-                 physics-collider
-                 static-body="shape: sphere; sphereRadius: 0.02"
-                 super-hands="colliderEvent: collisions;
-                              colliderEventProperty: els;
-                              colliderEndEvent: collisions;
-                              colliderEndEventProperty: clearedEls"
-                 collision-filter = "group: hands;
-                                     collidesWith: red, blue;
-                                     collisionForces: false">
-        </a-mixin>
-        <a-mixin id="sphere" dynamic-body grabbable geometry="primitive: sphere">
-        </a-mixin>
-        <a-mixin id="racket" dynamic-body grabbable geometry="primitive: box">
-        </a-mixin>
-      </a-assets>
-
       <!--vr hands (only visible when turned on)-->
       <a-entity id="cameraRig">
           <a-entity id="head" camera wasd-controls look-controls></a-entity>
@@ -45,6 +27,24 @@
             daydream-controls="right" gearvr-controls="right" mixin="controller">
           </a-entity>
           </a-entity>
+
+          <a-assets>
+              <a-mixin id="controller"
+                       physics-collider
+                       static-body="shape: sphere; sphereRadius: 0.02"
+                       super-hands="colliderEvent: collisions;
+                                    colliderEventProperty: els;
+                                    colliderEndEvent: collisions;
+                                    colliderEndEventProperty: clearedEls"
+                       collision-filter = "group: hands;
+                                           collidesWith: red, blue;
+                                           collisionForces: false">
+              </a-mixin>
+              <a-mixin id="sphere" dynamic-body grabbable geometry="primitive: sphere">
+              </a-mixin>
+              <a-mixin id="racket" dynamic-body grabbable geometry="primitive: box">
+              </a-mixin>
+            </a-assets>
  
 
       <!--example room made-->
