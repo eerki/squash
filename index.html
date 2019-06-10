@@ -14,11 +14,11 @@
       <!--vr hands (only visible when turned on)-->
       <a-entity id="cameraRig">
           <a-entity id="head" camera wasd-controls look-controls></a-entity>
-          <a-entity teleport-controls="cameraRig: #cameraRig; button: trackpad;"
+          <a-entity teleport-controls="cameraRig: #cameraRig; type:arc; button: trackpad;"
             vive-controls="hand: left"
             oculus-touch-controls="hand: left"
             microsoft-motion-controls="hand: left"
-            daydream-controls="left" gearvr-controls="left" mixin="controller"  hand-controls="left" >
+            daydream-controls="left" gearvr-controls="left" mixin="controller" hand-controls="left" >
           </a-entity>
           <a-entity  hand-controls="right" mixin="controller">
           </a-entity>
