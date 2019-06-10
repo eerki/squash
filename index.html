@@ -7,11 +7,10 @@
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="sphere.js"></script>
   </head>
-  <body>
+  <body> 
       <a-scene physics="gravity: -4.2">
-
-
 
       <!--vr hands (only visible when turned on)-->
       <a-entity id="cameraRig">
@@ -38,7 +37,7 @@
                                            collidesWith: red, blue;
                                            collisionForces: false">
               </a-mixin>
-              <a-mixin id="sphere" dynamic-body grabbable geometry="primitive: box" depth: 0.5>
+              <a-mixin id="sphere" dynamic-body grabbable geometry="primitive: sphere; shape: sphere; sphereRadius: 0.02" >
               </a-mixin>
               <a-mixin id="racket" dynamic-body grabbable geometry="primitive: box">
               </a-mixin>
