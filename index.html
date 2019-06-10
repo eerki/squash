@@ -29,6 +29,23 @@
         </a-mixin>
       </a-assets>
 
+
+ custom model gltf
+
+      Example:
+
+      <a-entity position="0 0 -4" gltf-model="src: mug.glb"
+                body="type: dynamic; mass: 5; shape: none;"
+                shape__main="shape: cylinder;
+                             height: 0.36;
+                             radiusTop: 0.24;
+                             radiusBottom: 0.24;"
+                shape__handle="shape: box;
+                               halfExtents: 0.15 0.18 0.04;
+                               offset: 0.4 0 0;">           
+      </a-entity>
+
+
       <!--vr hands (only visible when turned on)-->
       <a-entity id="cameraRig">
         <a-entity teleport-controls="cameraRig: #cameraRig; button: trackpad;"
@@ -45,7 +62,7 @@
     </a-entity>
 
       <!--example room made-->
-      <a-plane static-body collision-filter="collidesWith: red, blue" position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="brown"></a-plane>
+      <a-cylinder  static-body collision-filter="collidesWith: red, blue" radius="30" height="0.1" position="0 0 -4" color="brown"></a-cylinder>
       <a-plane static-body collision-filter="collidesWith: red, blue" position="0 1.5 -4" rotation="90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-plane static-body collision-filter="collidesWith: red, blue" position="0 0.75 -6" rotation="0 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
       <a-plane static-body collision-filter="collidesWith: red, blue" position="0 0.75 -2" rotation="-180 0 0" width="4" height="1.5" color="#7BC8A4"></a-plane>
